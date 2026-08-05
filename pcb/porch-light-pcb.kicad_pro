@@ -246,8 +246,13 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
-    "pinned_symbol_libs": []
+    "pinned_footprint_libs": [
+      "TENSTAR"
+    ],
+    "pinned_symbol_libs": [
+      "tenstar_esp32-c3",
+      "TENSTAR"
+    ]
   },
   "meta": {
     "filename": "porch-light-pcb.kicad_pro",
