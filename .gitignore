@@ -41,3 +41,14 @@ fp-info-cache
 
 # Local project settings
 *.kicad_prl
+
+# FreeCAD backup and temporary files
+*.FC.lock
+*.bak
+*.FCBak
+*.tmp
+
+# PlatformIO
+.pio
+.pioenvs
+.piolibdeps
