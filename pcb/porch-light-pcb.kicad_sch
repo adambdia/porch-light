@@ -2857,7 +2857,7 @@
 	)
 	(text "ESP32"
 		(exclude_from_sim no)
-		(at 160.274 31.496 0)
+		(at 169.164 32.766 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2987,7 +2987,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 36.83) (xy 179.07 36.83)
+			(xy 182.88 38.1) (xy 187.96 38.1)
 		)
 		(stroke
 			(width 0)
@@ -3014,6 +3014,16 @@
 			(type default)
 		)
 		(uuid "6d15bc89-ee2d-4a61-a055-898a91e5b51d")
+	)
+	(wire
+		(pts
+			(xy 156.21 50.8) (xy 157.48 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7da8bd0a-b4cf-4113-a40f-23a92f45d257")
 	)
 	(wire
 		(pts
@@ -3107,7 +3117,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 39.37) (xy 179.07 39.37)
+			(xy 182.88 40.64) (xy 187.96 40.64)
 		)
 		(stroke
 			(width 0)
@@ -3137,7 +3147,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 54.61) (xy 173.99 54.61)
+			(xy 184.15 55.88) (xy 182.88 55.88)
 		)
 		(stroke
 			(width 0)
@@ -3175,6 +3185,16 @@
 		)
 		(uuid "57666530-750d-4c5f-91b9-bc14dff92f7d")
 	)
+	(label "RELAY_GPIO"
+		(at 156.21 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "68f76ca6-f48a-4447-bcfc-78373d48e777")
+	)
 	(label "RELAY_GND"
 		(at 130.81 27.94 0)
 		(effects
@@ -3196,7 +3216,7 @@
 		(uuid "b85f7469-9a41-4587-a7c4-8e255209748a")
 	)
 	(label "BUTTON_GPIO"
-		(at 175.26 54.61 0)
+		(at 184.15 55.88 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3676,7 +3696,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 179.07 39.37 90)
+		(at 187.96 40.64 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3685,7 +3705,7 @@
 		(fields_autoplaced yes)
 		(uuid "57deb2d1-6923-4ab8-ad10-d735d3cc698c")
 		(property "Reference" "#PWR06"
-			(at 185.42 39.37 0)
+			(at 194.31 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3694,7 +3714,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 182.88 39.3699 90)
+			(at 191.77 40.6399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3703,7 +3723,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 179.07 39.37 0)
+			(at 187.96 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3712,7 +3732,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 179.07 39.37 0)
+			(at 187.96 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3721,7 +3741,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 179.07 39.37 0)
+			(at 187.96 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3837,7 +3857,7 @@
 	)
 	(symbol
 		(lib_id "TENSTAR:TENSTAR_ESP32-C3-SUPERMINI")
-		(at 161.29 46.99 0)
+		(at 170.18 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3845,7 +3865,7 @@
 		(dnp no)
 		(uuid "5f745177-bc75-4702-bfb5-a5e8f7aed263")
 		(property "Reference" "U1"
-			(at 153.924 34.29 0)
+			(at 162.814 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3853,7 +3873,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 161.29 34.036 0)
+			(at 170.18 35.306 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3862,7 +3882,7 @@
 			)
 		)
 		(property "Footprint" "TENSTAR:TENSTAR_ESP32-C3-SUPERMINI"
-			(at 161.29 60.706 0)
+			(at 170.18 61.976 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3871,7 +3891,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.waveshare.com/wiki/ESP32-C3-Zero"
-			(at 161.036 63.246 0)
+			(at 169.926 64.516 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3880,7 +3900,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 151.13 36.83 0)
+			(at 160.02 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4265,7 +4285,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 179.07 36.83 0)
+		(at 187.96 38.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4274,7 +4294,7 @@
 		(fields_autoplaced yes)
 		(uuid "ad178e97-5139-48b8-9e2a-f55938800c37")
 		(property "Reference" "#PWR05"
-			(at 179.07 40.64 0)
+			(at 187.96 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4283,7 +4303,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 179.07 31.75 0)
+			(at 187.96 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4291,7 +4311,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 179.07 36.83 0)
+			(at 187.96 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4300,7 +4320,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 179.07 36.83 0)
+			(at 187.96 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4309,7 +4329,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 179.07 36.83 0)
+			(at 187.96 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
