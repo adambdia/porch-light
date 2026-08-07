@@ -540,7 +540,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "porch-light-pcb.step",
+      "step": "porch-light-pcb.stl",
       "svg": "",
       "vrml": ""
     },

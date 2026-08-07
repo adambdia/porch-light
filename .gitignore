@@ -62,6 +62,7 @@ Private
 .pioenvs
 .piolibdeps
 
-# STEP files
+# CAD exports
 *.stp
 *.step
+
