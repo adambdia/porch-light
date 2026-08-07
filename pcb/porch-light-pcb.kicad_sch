@@ -3069,12 +3069,6 @@
 		(uuid "27c98ab4-9d6b-4a76-b086-048a2bb447c8")
 	)
 	(junction
-		(at 44.45 62.23)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "57b051d4-feb7-4ead-9c95-c13d528c7ed9")
-	)
-	(junction
 		(at 66.04 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3091,12 +3085,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ae36ec74-9269-44d2-8fa8-c3d494eebb23")
-	)
-	(junction
-		(at 48.26 43.18)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ef051bc4-eb29-49ad-b059-4d7cc72daeba")
 	)
 	(junction
 		(at 48.26 54.61)
@@ -3156,26 +3144,6 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 64.77) (xy 44.45 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "202d687f-8e9a-4e06-87c3-11702097d320")
-	)
-	(wire
-		(pts
-			(xy 48.26 31.75) (xy 48.26 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "27d4dcae-6267-4a76-970f-1d20fb4183b5")
-	)
-	(wire
-		(pts
 			(xy 101.6 26.67) (xy 106.68 26.67)
 		)
 		(stroke
@@ -3206,7 +3174,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 43.18) (xy 48.26 54.61)
+			(xy 48.26 31.75) (xy 48.26 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3253,16 +3221,6 @@
 			(type default)
 		)
 		(uuid "6186020b-6203-415c-9c4d-149086a2be4e")
-	)
-	(wire
-		(pts
-			(xy 50.8 43.18) (xy 48.26 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "62e868c9-486d-4f2c-84d4-83ab87188636")
 	)
 	(wire
 		(pts
@@ -3434,16 +3392,6 @@
 		)
 		(uuid "fa8aad4e-2851-4d5d-9ace-13fa725b9e38")
 	)
-	(label "AC_NEUTRAL"
-		(at 44.45 64.77 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "11c2821a-6b36-4730-ba39-547bd062e8ec")
-	)
 	(label "RELAY_GPIO"
 		(at 134.62 34.29 180)
 		(effects
@@ -3484,15 +3432,35 @@
 		)
 		(uuid "747db7f6-6052-4165-bbe8-30546173f6e5")
 	)
+	(label "AC_RELAY"
+		(at 43.18 26.67 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "85b40c33-179b-4935-95d1-cc1d76624185")
+	)
+	(label "AC_NEUTRAL"
+		(at 44.45 62.23 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a46d261b-c26f-400a-908f-9b7f7972e772")
+	)
 	(label "AC_LIVE"
-		(at 50.8 43.18 0)
+		(at 48.26 40.64 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "92b81a2a-2349-4631-a9d6-cf220591ce51")
+		(uuid "b74c4f1e-652d-4298-b507-91db008de4f2")
 	)
 	(label "BUTTON_GPIO"
 		(at 220.98 25.4 180)

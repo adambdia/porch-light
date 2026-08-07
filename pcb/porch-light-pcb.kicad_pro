@@ -509,11 +509,7 @@
     "netclass_patterns": [
       {
         "netclass": "Mains_AC",
-        "pattern": "AC_LIVE"
-      },
-      {
-        "netclass": "Mains_AC",
-        "pattern": "AC_NEUTRAL"
+        "pattern": "/AC_*"
       }
     ]
   },
