@@ -2943,7 +2943,7 @@
 		(end 247.65 77.47)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash)
 		)
 		(fill
 			(type none)
@@ -2955,7 +2955,7 @@
 		(end 118.11 77.47)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash)
 		)
 		(fill
 			(type none)

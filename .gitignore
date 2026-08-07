@@ -47,8 +47,21 @@ fp-info-cache
 *.bak
 *.FCBak
 *.tmp
+*.pyc
+*.fcstd1
+*.FCStd1
+*.fcstd2
+*.FCStd2
+*.FCBak
+Private
+*.bak
+.DS_Store
 
 # PlatformIO
 .pio
 .pioenvs
 .piolibdeps
+
+# STEP files
+*.stp
+*.step
