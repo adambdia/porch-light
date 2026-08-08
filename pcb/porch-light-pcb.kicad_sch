@@ -1756,6 +1756,173 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Diode:1N4007"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N4007"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+				(at 0 -4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.vishay.com/docs/88503/1n4001.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "1000V 1A General Purpose Rectifier Diode, DO-41"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "D*DO?41*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "1N4007_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1N4007_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "PRY2-3V-450-1A-EF:PRY2-3V-450-1A-EF"
 			(pin_names
 				(offset 1.016)
@@ -2939,7 +3106,7 @@
 		)
 	)
 	(rectangle
-		(start 120.65 13.97)
+		(start 123.19 13.97)
 		(end 247.65 77.47)
 		(stroke
 			(width 0)
@@ -2952,7 +3119,7 @@
 	)
 	(rectangle
 		(start 13.97 13.97)
-		(end 118.11 77.47)
+		(end 120.65 77.47)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2994,7 +3161,7 @@
 	)
 	(text "DC SIDE\n"
 		(exclude_from_sim no)
-		(at 125.476 16.51 0)
+		(at 128.524 16.51 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3063,6 +3230,12 @@
 		(uuid "eb93a06d-a5f7-4fc0-a65a-fce1383f8f79")
 	)
 	(junction
+		(at 110.49 26.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "099f25aa-d801-44ea-b47b-c250a88e7b10")
+	)
+	(junction
 		(at 137.16 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3087,6 +3260,12 @@
 		(uuid "ae36ec74-9269-44d2-8fa8-c3d494eebb23")
 	)
 	(junction
+		(at 110.49 34.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b9b04ce0-b97c-4007-a3d6-8e6b0ceeb57a")
+	)
+	(junction
 		(at 48.26 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3101,6 +3280,16 @@
 			(type default)
 		)
 		(uuid "060d41d8-09d6-4d3d-9845-0e358f47b46d")
+	)
+	(wire
+		(pts
+			(xy 101.6 34.29) (xy 101.6 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06cfa8aa-7f73-48db-ac69-92bd30b5cafc")
 	)
 	(wire
 		(pts
@@ -3144,7 +3333,17 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 26.67) (xy 106.68 26.67)
+			(xy 101.6 34.29) (xy 110.49 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "191d592d-8288-4304-a2c0-1949bcfbb2fa")
+	)
+	(wire
+		(pts
+			(xy 101.6 26.67) (xy 110.49 26.67)
 		)
 		(stroke
 			(width 0)
@@ -3234,13 +3433,13 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 31.75) (xy 101.6 31.75)
+			(xy 110.49 34.29) (xy 110.49 35.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6d15bc89-ee2d-4a61-a055-898a91e5b51d")
+		(uuid "7b708845-c580-4a75-9d43-823d15cc40e4")
 	)
 	(wire
 		(pts
@@ -3281,6 +3480,16 @@
 			(type default)
 		)
 		(uuid "8987f5a2-b201-4fdc-96cc-68071abda249")
+	)
+	(wire
+		(pts
+			(xy 110.49 24.13) (xy 110.49 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b1e424f-b81f-4d6a-bf7f-4aa3760c136f")
 	)
 	(wire
 		(pts
@@ -3412,16 +3621,6 @@
 		)
 		(uuid "51afc859-49d8-4c2c-b1e5-96e43dd21d14")
 	)
-	(label "RELAY_GND"
-		(at 106.68 31.75 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "57666530-750d-4c5f-91b9-bc14dff92f7d")
-	)
 	(label "RELAY_GPIO"
 		(at 175.26 52.07 180)
 		(effects
@@ -3431,6 +3630,16 @@
 			(justify right bottom)
 		)
 		(uuid "68f76ca6-f48a-4447-bcfc-78373d48e777")
+	)
+	(label "RELAY_GND"
+		(at 110.49 35.56 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7217da5b-31c5-40f6-acaf-b3c7a55ed093")
 	)
 	(label "RELAY_GND"
 		(at 149.86 29.21 0)
@@ -3623,6 +3832,93 @@
 			(project "porch-light-pcb"
 				(path "/c90725bf-bd5a-4426-8225-f7c4cfb17e78"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4007")
+		(at 110.49 30.48 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "19d48975-bd20-4f6c-a3b0-a212bbb4fea3")
+		(property "Reference" "D1"
+			(at 113.03 29.2099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1N4007"
+			(at 111.252 32.766 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123F"
+			(at 106.045 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88503/1n4001.pdf"
+			(at 110.49 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1000V 1A General Purpose Rectifier Diode, DO-41"
+			(at 110.49 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 110.49 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 110.49 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0ee2d349-1519-403a-ab96-391bd8151150")
+		)
+		(pin "1"
+			(uuid "95017aed-cadf-4a50-bd28-c3d2eca31eff")
+		)
+		(instances
+			(project "porch-light-pcb"
+				(path "/c90725bf-bd5a-4426-8225-f7c4cfb17e78"
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -4771,7 +5067,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 106.68 26.67 0)
+		(at 110.49 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4780,7 +5076,7 @@
 		(fields_autoplaced yes)
 		(uuid "decfa48a-d90d-4d65-a1d0-1ace937636e0")
 		(property "Reference" "#PWR09"
-			(at 106.68 30.48 0)
+			(at 110.49 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4789,7 +5085,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 106.68 21.59 0)
+			(at 110.49 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4797,7 +5093,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 26.67 0)
+			(at 110.49 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4806,7 +5102,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 26.67 0)
+			(at 110.49 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4815,7 +5111,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 106.68 26.67 0)
+			(at 110.49 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
