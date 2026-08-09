@@ -62,8 +62,11 @@ Private
 .pioenvs
 .piolibdeps
 
-# CAD exportss
+# CAD exports
 *.stp
 *.step
 *.stl
 pcb/fab/*
+
+# CAD in general
+hw/*
