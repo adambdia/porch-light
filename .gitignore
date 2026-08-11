@@ -71,3 +71,8 @@ pcb/fab/*
 
 # CAD in general
 hw/*
+
+# Lazyvim
+.cache/
+**/.cache/
+compile_commands.json
