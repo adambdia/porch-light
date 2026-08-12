@@ -1,9 +1,7 @@
-#include "esp32-hal-gpio.h"
+#include "Light.h"
 #include <Arduino.h>
-#include <Light.h>
 
 static int relayPin = 10;
-
 static light_state_t current_light_state = LIGHT_OFF;
 static light_state_t next_light_state = LIGHT_OFF;
 
