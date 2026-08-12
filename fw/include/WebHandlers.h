@@ -7,8 +7,6 @@
 #define LED_OFF HIGH
 
 void handleRoot(AsyncWebServerRequest *request);
-void handleUpdate(AsyncWebServerRequest *request);
-
-String rootProcessor(const String &var);
+void handleLight(AsyncWebServerRequest *request);
 
 #endif
