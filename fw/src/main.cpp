@@ -1,3 +1,5 @@
+#include "Light.h"
+#include "Schedule.h"
 #include "WebHandlers.h"
 #include "WifiManager.h"
 #include <Arduino.h>
@@ -8,7 +10,14 @@ void setup() {
   delay(1000);
 
   initWifi();
+  initSchedule();
   initWebServer();
+  initLight();
 }
 
-void loop() {}
+const time_t print_delay = 5000;
+time_t last_print = 0;
+void loop() {
+  loopSchedule();
+  loopLight();
+}

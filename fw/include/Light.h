@@ -3,12 +3,17 @@
 #ifndef LIGHT_H
 #define LIGHT_H
 
-typedef enum { LIGHT_ON, LIGHT_OFF } light_state_t;
-
 void initLight();
-void turnOnLight();
-void turnOffLight();
-void setLightState(light_state_t state);
+
+// to be handled by scheduler
+void scheduleLightOn();
+void scheduleLightOff();
+
+// webpage button or physical button
+void overrideLight();
+void disableOverrideLight();
+bool getLightOverride();
+
 void loopLight();
 
 #endif

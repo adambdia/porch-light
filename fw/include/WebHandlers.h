@@ -5,6 +5,6 @@
 
 void initWebServer();
 void handleRoot(AsyncWebServerRequest *request);
-void handleLight(AsyncWebServerRequest *request);
+void handleLightOverride(AsyncWebServerRequest *request);
 
 #endif

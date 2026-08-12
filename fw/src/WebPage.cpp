@@ -37,12 +37,11 @@ extern const char index_html[] PROGMEM =
   <h1>Porch Light</h1>
   
   <!-- The button triggers the JavaScript function when clicked -->
-  <button class="btn" onclick="toggleLight()">Toggle Light</button>
+  <button class="btn" onclick="lightOverride()">Turn On Temporarily (10s)</button>
 
   <script>
-    function toggleLight() {
-      // fetch() sends a background GET request to http://<your-esp-ip>/light
-      fetch('/light')
+    function lightOverride() {
+      fetch('/lightOverride')
         .then(response => {
           if (response.ok) {
             console.log("Request sent successfully!");
