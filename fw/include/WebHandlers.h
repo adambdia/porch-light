@@ -9,4 +9,6 @@
 void handleRoot(AsyncWebServerRequest *request);
 void handleUpdate(AsyncWebServerRequest *request);
 
+String rootProcessor(const String &var);
+
 #endif

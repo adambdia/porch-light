@@ -3,10 +3,13 @@
 #include <ESPAsyncWebServer.h>
 #include <WebHandlers.h>
 #include <WiFi.h>
+#include <time.h>
 
 AsyncWebServer server(80);
 
 const char *HOSTNAME = "Porch Light Controller";
+const char *tz_info = "EST5EDT,M3.2.0,M11.1.0";
+
 const time_t LEDOnTime = 250;
 volatile time_t turnOffLED = 0;
 volatile bool LEDOn = false;
@@ -33,11 +36,14 @@ void setup() {
     Serial.print(".");
   }
 
-  // 3. Connection successful!
-  Serial.println("");
-  Serial.println("Wi-Fi connected successfully!");
-  Serial.print("IP Address: ");
-  Serial.println(WiFi.localIP());
+  configTzTime(tz_info, "pool.ntp.org");
+
+  printf("Waiting for time sync...\n");
+  time_t now = time(nullptr);
+  while (now < 1000000000) {
+    delay(500);
+    now = time(nullptr);
+  }
 
   server.on("/", HTTP_GET, handleRoot);
 
