@@ -1,3 +1,4 @@
+#include "Button.h"
 #include "Light.h"
 #include "Schedule.h"
 #include "WebHandlers.h"
@@ -13,11 +14,11 @@ void setup() {
   initSchedule();
   initWebServer();
   initLight();
+  initButton();
 }
 
-const time_t print_delay = 5000;
-time_t last_print = 0;
 void loop() {
   loopSchedule();
+  loopButton();
   loopLight();
 }

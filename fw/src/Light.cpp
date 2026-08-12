@@ -1,11 +1,14 @@
 #include "Light.h"
+#include "esp32-hal.h"
 #include <Arduino.h>
+#include <cstdint>
 
 static int relayPin = 8;
-static bool scheduleLightEnabled = false;
+static volatile bool scheduleLightEnabled = false;
 static const time_t LIGHT_OVERRIDE_DURATION = 10 * 1000; // 10 seconds for now
 static volatile time_t lightOverrideExpireTime = 0;
 static volatile bool lightOverrideEnabled = false;
+static volatile uint32_t lastLightOverride = 0;
 
 void initLight() { pinMode(relayPin, OUTPUT); }
 
@@ -13,34 +16,23 @@ void turnOnLight() { digitalWrite(relayPin, HIGH); }
 
 void turnOffLight() { digitalWrite(relayPin, LOW); }
 
-// void toggleLight() {
-//   if (current_light_state == LIGHT_ON)
-//     next_light_state = LIGHT_OFF;
-//   else
-//     next_light_state = LIGHT_ON;
-// }
-
 // these functions will eventually be called in Schedule.cpp
-void scheduleLightOn() { lightOverrideEnabled = true; }
-
-void scheduleLightOff() { lightOverrideEnabled = false; }
+void scheduleLightOn() { scheduleLightEnabled = true; }
+void scheduleLightOff() { scheduleLightEnabled = false; }
 
 void overrideLight() {
   lightOverrideEnabled = true;
-  lightOverrideExpireTime = millis() + LIGHT_OVERRIDE_DURATION;
+  lastLightOverride = millis();
 }
 
-void disableOverrideLight() {
-  lightOverrideEnabled = false;
-  lightOverrideExpireTime = 0;
-}
+void disableOverrideLight() { lightOverrideEnabled = false; }
 
 bool getLightOverride() { return lightOverrideEnabled; }
 
 bool getLightSchedule() { return scheduleLightEnabled; }
 
 void updateOverrideTimer() {
-  if (millis() > lightOverrideExpireTime) {
+  if (millis() - lastLightOverride > LIGHT_OVERRIDE_DURATION) {
     disableOverrideLight();
   }
 }
