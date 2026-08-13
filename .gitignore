@@ -62,6 +62,7 @@ Private
 .pioenvs
 .piolibdeps
 secrets.h
+secrets.cpp
 .clangd
 
 # CAD exports
