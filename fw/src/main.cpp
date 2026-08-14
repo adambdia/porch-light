@@ -1,3 +1,4 @@
+#include "APIClient.h"
 #include "Button.h"
 #include "Light.h"
 #include "Schedule.h"
@@ -11,6 +12,7 @@ void setup() {
   delay(1000);
 
   initWifi();
+  initAPIClient();
   initSchedule();
   initWebServer();
   initLight();
