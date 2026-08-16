@@ -21,6 +21,10 @@ void scheduleLightOn() { scheduleLightEnabled = true; }
 void scheduleLightOff() { scheduleLightEnabled = false; }
 
 void overrideLight() {
+  if (lightOverrideEnabled) {
+    lightOverrideEnabled = false;
+    return;
+  }
   lightOverrideEnabled = true;
   lastLightOverride = millis();
 }
