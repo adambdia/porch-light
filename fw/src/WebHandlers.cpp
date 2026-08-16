@@ -4,6 +4,7 @@
 #include "WebPage.h"
 #include <Arduino.h>
 #include <ESPAsyncWebServer.h>
+#include <cstdint>
 #include <time.h>
 
 extern const char index_html[] PROGMEM;
@@ -22,6 +23,7 @@ void handleLightOverride(AsyncWebServerRequest *request) {
 void handleUpdateSchedule(AsyncWebServerRequest *request) {
   bool useSunrise = false;
   bool useSunset = false;
+  uint32_t duration = 10 * 60 * 1000; // 10 minutes
 
   struct tm onTime = {};
   struct tm offTime = {};
@@ -53,7 +55,13 @@ void handleUpdateSchedule(AsyncWebServerRequest *request) {
         request->getParam("tomorrowOnMinute", IS_POST)->value().toInt();
   }
 
+  if (request->hasParam("overrideDuration", IS_POST)) {
+    duration = request->getParam("overrideDuration", IS_POST)->value().toInt();
+    duration = duration * 1000; // s to ms
+  }
+
   updateScheduleFromWeb(onTime, offTime, useSunrise, useSunset);
+  setOverrideDuration(duration);
   request->send(200, "text/plain", "OK");
 }
 

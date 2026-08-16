@@ -5,7 +5,7 @@
 
 static int relayPin = 8;
 static volatile bool scheduleLightEnabled = false;
-static const time_t LIGHT_OVERRIDE_DURATION = 10 * 1000; // 10 seconds for now
+static volatile uint32_t lightOverrideDuration = 10 * 60 * 1000; //  10 minutes
 static volatile time_t lightOverrideExpireTime = 0;
 static volatile bool lightOverrideEnabled = false;
 static volatile uint32_t lastLightOverride = 0;
@@ -31,8 +31,12 @@ bool getLightOverride() { return lightOverrideEnabled; }
 
 bool getLightSchedule() { return scheduleLightEnabled; }
 
+void setOverrideDuration(uint32_t duration) {
+  lightOverrideDuration = duration;
+}
+
 void updateOverrideTimer() {
-  if (millis() - lastLightOverride > LIGHT_OVERRIDE_DURATION) {
+  if (millis() - lastLightOverride > lightOverrideDuration) {
     disableOverrideLight();
   }
 }

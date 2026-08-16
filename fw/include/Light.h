@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <cstdint>
 
 #ifndef LIGHT_H
 #define LIGHT_H
@@ -13,6 +14,7 @@ void scheduleLightOff();
 void overrideLight();
 void disableOverrideLight();
 bool getLightOverride();
+void setOverrideDuration(uint32_t duration);
 
 void loopLight();
 

@@ -1,4 +1,5 @@
 #include "WebPage.h"
+#include <Arduino.h>
 
 extern const char index_html[] PROGMEM =
     R"rawliteral(<!DOCTYPE html>
@@ -6,7 +7,7 @@ extern const char index_html[] PROGMEM =
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Porch Light Controller</title>
+  <title>Porch Light Dashboard</title>
   <style>
     body {
       font-family: sans-serif;
@@ -68,6 +69,10 @@ extern const char index_html[] PROGMEM =
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+    /* Wide style specifically for the override duration input */
+    .time-inputs input[type="number"].wide-input {
+      width: 100px;
+    }
     .checkbox-group {
       display: flex;
       align-items: center;
@@ -83,12 +88,12 @@ extern const char index_html[] PROGMEM =
 </head>
 <body>
 
-  <h1>Porch Light</h1>
+  <h1>Porch Light Dashboard</h1>
   
   <!-- Manual Override Section -->
   <div class="card">
     <h2>Manual Control</h2>
-    <button class="btn" onclick="lightOverride()">Turn On Temporarily (10s)</button>
+    <button class="btn" onclick="lightOverride()">Turn On Temporarily</button>
   </div>
 
   <!-- Schedule Update Section -->
@@ -121,6 +126,16 @@ extern const char index_html[] PROGMEM =
         <div class="time-inputs">
           <input type="number" id="tomorrowOffHour" name="tomorrowOffHour" placeholder="HH" min="0" max="23"> :
           <input type="number" id="tomorrowOffMinute" name="tomorrowOffMinute" placeholder="MM" min="0" max="59">
+        </div>
+      </div>
+
+      <hr style="border: 1px solid #eee; margin: 20px 0;">
+
+      <!-- OVERRIDE DURATION -->
+      <div class="form-group">
+        <label for="overrideDuration">Override Duration (Seconds)</label>
+        <div class="time-inputs">
+          <input type="number" id="overrideDuration" name="overrideDuration" class="wide-input" placeholder="Seconds" value="10" min="1">
         </div>
       </div>
 
