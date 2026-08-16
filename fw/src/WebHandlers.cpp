@@ -1,22 +1,15 @@
 #include "WebHandlers.h"
 #include "Light.h"
+#include "Schedule.h"
 #include "WebPage.h"
 #include <Arduino.h>
 #include <ESPAsyncWebServer.h>
+#include <time.h>
 
-extern volatile bool LEDOn;
-extern volatile time_t turnOffLED;
 extern const char index_html[] PROGMEM;
+static const bool IS_POST = true;
 
 AsyncWebServer server(80);
-
-void initWebServer() {
-  server.on("/", HTTP_GET, handleRoot);
-  // server.on("/light", HTTP_GET, handleToggle);
-  server.on("/lightOverride", HTTP_GET, handleLightOverride);
-  server.begin();
-}
-
 void handleRoot(AsyncWebServerRequest *request) {
   request->send_P(200, "text/html", index_html);
 }
@@ -24,4 +17,50 @@ void handleRoot(AsyncWebServerRequest *request) {
 void handleLightOverride(AsyncWebServerRequest *request) {
   overrideLight();
   request->send(200, "text/plain", "OK");
+}
+
+void handleUpdateSchedule(AsyncWebServerRequest *request) {
+  bool useSunrise = false;
+  bool useSunset = false;
+
+  struct tm onTime = {};
+  struct tm offTime = {};
+
+  // pull values out of form
+  if (request->hasParam("useSunrise", IS_POST))
+    useSunrise = true;
+
+  if (request->hasParam("useSunset", IS_POST))
+    useSunset = true;
+
+  if (request->hasParam("tomorrowOffHour", IS_POST)) {
+    offTime.tm_hour =
+        request->getParam("tomorrowOffHour", IS_POST)->value().toInt();
+  }
+
+  if (request->hasParam("tomorrowOffMinute", IS_POST)) {
+    offTime.tm_min =
+        request->getParam("tomorrowOffMinute", IS_POST)->value().toInt();
+  }
+
+  if (request->hasParam("tomorrowOnHour", IS_POST)) {
+    onTime.tm_hour =
+        request->getParam("tomorrowOnHour", IS_POST)->value().toInt();
+  }
+
+  if (request->hasParam("tomorrowOnMinute", IS_POST)) {
+    onTime.tm_min =
+        request->getParam("tomorrowOnMinute", IS_POST)->value().toInt();
+  }
+
+  updateScheduleFromWeb(onTime, offTime, useSunrise, useSunset);
+  request->send(200, "text/plain", "OK");
+}
+
+void initWebServer() {
+  server.on("/", HTTP_GET, handleRoot);
+  // server.on("/light", HTTP_GET, handleToggle);
+  server.on("/lightOverride", HTTP_GET, handleLightOverride);
+  server.on("/updateSchedule", HTTP_POST, handleUpdateSchedule);
+  server.begin();
 }
