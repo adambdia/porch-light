@@ -20,6 +20,7 @@ void setup() {
 }
 
 void loop() {
+  loopWebServer();
   loopSchedule();
   loopButton();
   loopLight();

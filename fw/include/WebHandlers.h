@@ -4,5 +4,6 @@
 #define WEBHANDLERS_H
 
 void initWebServer();
+void loopWebServer();
 
 #endif

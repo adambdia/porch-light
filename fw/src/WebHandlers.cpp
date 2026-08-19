@@ -4,13 +4,15 @@
 #include "WebPage.h"
 #include <Arduino.h>
 #include <ESPAsyncWebServer.h>
+#include <ElegantOTA.h>
 #include <cstdint>
 #include <time.h>
 
 extern const char index_html[] PROGMEM;
 static const bool IS_POST = true;
 
-AsyncWebServer server(80);
+static AsyncWebServer server(80);
+
 void handleRoot(AsyncWebServerRequest *request) {
   request->send_P(200, "text/html", index_html);
 }
@@ -70,5 +72,8 @@ void initWebServer() {
   // server.on("/light", HTTP_GET, handleToggle);
   server.on("/lightOverride", HTTP_GET, handleLightOverride);
   server.on("/updateSchedule", HTTP_POST, handleUpdateSchedule);
+  ElegantOTA.begin(&server);
   server.begin();
 }
+
+void loopWebServer() { ElegantOTA.loop(); }
