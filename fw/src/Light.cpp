@@ -1,20 +1,31 @@
 #include "Light.h"
+#include "esp32-hal-gpio.h"
 #include "esp32-hal.h"
 #include <Arduino.h>
 #include <cstdint>
 
-static int relayPin = 8;
+static int relayPin = 10;
+static int LEDPin = 8; // onboard LED, for debug
 static volatile bool scheduleLightEnabled = false;
 static volatile uint32_t lightOverrideDuration = 10 * 60 * 1000; //  10 minutes
 static volatile time_t lightOverrideExpireTime = 0;
 static volatile bool lightOverrideEnabled = false;
 static volatile uint32_t lastLightOverride = 0;
 
-void initLight() { pinMode(relayPin, OUTPUT); }
+void initLight() {
+  pinMode(relayPin, OUTPUT);
+  pinMode(LEDPin, OUTPUT);
+}
 
-void turnOnLight() { digitalWrite(relayPin, HIGH); }
+void turnOnLight() {
+  digitalWrite(relayPin, HIGH);
+  digitalWrite(LEDPin, LOW);
+}
 
-void turnOffLight() { digitalWrite(relayPin, LOW); }
+void turnOffLight() {
+  digitalWrite(relayPin, LOW);
+  digitalWrite(LEDPin, HIGH);
+}
 
 // these functions will eventually be called in Schedule.cpp
 void scheduleLightOn() { scheduleLightEnabled = true; }
