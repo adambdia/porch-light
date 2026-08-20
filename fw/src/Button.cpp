@@ -1,5 +1,6 @@
 #include "Button.h"
 #include "Light.h"
+#include "esp32-hal-gpio.h"
 #include <Arduino.h>
 #include <cstdint>
 
@@ -12,7 +13,8 @@ static uint32_t lastButtonPress = 0;
 void initButton() { pinMode(buttonPin, INPUT_PULLUP); }
 
 void loopButton() {
-  if (digitalRead(buttonPin) == BUTTON_ON) {
+  int buttonState = digitalRead(buttonPin);
+  if (buttonState == BUTTON_ON) {
     if (millis() - lastButtonPress <= BUTTON_DEBOUNCE_DURATION)
       return;
 

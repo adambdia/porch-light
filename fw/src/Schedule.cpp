@@ -110,12 +110,20 @@ void loopSchedule() {
     getNextSyncTime(now);
   }
 
-  if (now < turnOffTime) {
-    scheduleLightOn();
-  } else if ((now > turnOffTime) && (now < turnOnTime)) {
-    scheduleLightOff();
-  } else if (now > turnOnTime) {
-    scheduleLightOn();
+  if (turnOnTime < turnOffTime) {
+    // using daytime schedule
+    if (now >= turnOnTime && now < turnOffTime) {
+      scheduleLightOn();
+    } else {
+      scheduleLightOff();
+    }
+  } else {
+    // using night time schedule
+    if (now >= turnOnTime || now < turnOffTime) {
+      scheduleLightOn();
+    } else {
+      scheduleLightOff();
+    }
   }
 
   lastRunTime = millis();
